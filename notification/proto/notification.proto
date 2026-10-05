@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package notification;
+option go_package = "./bff/proto";
+
+message NotificationMessageRequest {
+  string message  = 1;
+  string kind     = 2;
+  string receiver = 3;
+}
+
+message NotificationMessageResponse {
+  bool    success   = 1;
+  string  message   = 2;
+  string  kind      = 3;
+  string receiver   = 4;
+}
+
+service NotificationRPCService {
+  rpc TransportMessage(NotificationMessageRequest) returns (NotificationMessageResponse) {};
+}
