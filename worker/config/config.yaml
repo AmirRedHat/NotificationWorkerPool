@@ -1,0 +1,7 @@
+workers:
+  sms:
+    number: 4
+  email:
+    number: 3
+  push:
+    number: 3
